@@ -1,29 +1,26 @@
 <template>
   <div id="app">
-    <span>{{count}}</span>
-    <button v-on:click="add">点我+</button>
-    <button v-on:click="decrease">点我-</button>
+      <span>请输入数字：</span>
+      <input v-model="number">
+    <CounterGroup v-bind:counterNum="number" @change="(val) => updateCount(index, val)"></CounterGroup>
+    
   </div>
 </template>
 
 <script>
-
+import CounterGroup from "./components/CounterGroup"
 export default {
   name: 'app',
+  components: {
+    CounterGroup
+  },
   data: function() {
     return {
-      count: 0
+      number: 0
     }
-  },
-  methods:{
-    add: function() {
-      this.count++
-    },
-    decrease: function() {
-      this.count--
-    }
-  } 
+  }
 }
+
 </script>
 
 <style>
