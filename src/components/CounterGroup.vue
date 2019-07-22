@@ -1,7 +1,7 @@
 <template>
   <div id="CounterGroup">
-    <Counter v-for="(n, index) in (new Array(parseInt(counterNum)))" 
-    :key="index"
+  <Counter v-for="n in parseInt(counterNum)" 
+    :key="n"
     @change="updateCount($event)" />
     <span>总数：{{total}}</span>
   </div>
